@@ -15,9 +15,11 @@ intents: discord.Intents = discord.Intents(
     message_content=True,
 )
 
+
 class Bot(commands.AutoShardedBot):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+
 
 bot = Bot(
     command_prefix=commands.when_mentioned_or("!", "! "),
@@ -29,6 +31,7 @@ bot = Bot(
         name="We are awesome",
     ),
 )
+
 
 @bot.event
 async def on_ready():
