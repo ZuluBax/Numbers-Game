@@ -69,7 +69,7 @@ jobs:
               touch token.0
               echo ${{ env.BOT_TOKEN }} > token.0
               echo $?
-            host: ${{ var.PI_SSH_HOST }}
+            host: ${{ vars.PI_SSH_HOST }}
             user: Pi
             key: ${{ secrets.SSH_PRIVATE_KEY }}
 
