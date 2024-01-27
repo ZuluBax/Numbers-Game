@@ -1,3 +1,42 @@
-[virtualenvs]
-in-project = true
-prefer-active-python = true
+[tool.poetry]
+name = "Numbers-Game"
+version = "0.1.0"
+description = ""
+authors = ["Zulubax <bjw5891@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+jsonschema = "^4.21.1"
+requests = "^2.31.0"
+assertpy = "^1.1"
+lxml = "^5.1.0"
+pyright = "^1.1.348"
+black = "^23.12.1"
+semver = "^3.0.2"
+gitpython = "^3.1.41"
+pip-licenses = "^4.3.4"
+flake8 = "^7.0.0"
+pre-commit = "^3.5.0"
+isort = "^5.13.1"
+
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.6.0"
+
+[tool.pyright]
+include = ["src"]
+exclude = ["**/.*",
+    "**/__pycache__",
+    "**/venv",
+    "**/.venv"
+]
+defineConstant = { DEBUG = true }
+reportMissingImports = true
+
+pythonVersion = "3.11"
+pythonPlatform = "Linux"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
