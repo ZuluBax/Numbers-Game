@@ -10,6 +10,7 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Close existing process
+        continue-on-error: true
         run: |
           pkill -9 -f script.py
       - name: Checkout
