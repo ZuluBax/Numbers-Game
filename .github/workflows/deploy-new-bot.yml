@@ -31,8 +31,8 @@ jobs:
             # pip install discord.py
             # pip install discord.py
             # etc
-          host: # 123.45.678.890
-          user: root
+          host: 10.69.69.228
+          user: Pi
           key: ${{ secrets.SSH_PRIVATE_KEY }}
 
   deploy-via-sftp:
@@ -42,8 +42,8 @@ jobs:
       - id: SFTPDeploy
         uses: wlixcc/SFTP-Deploy-Action@v1.2.1
         with:
-          username: root
-          server: # 123.45.678.890
+          username: Pi
+          server: 10.69.69.228
           port: 22
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
           # clones entire github repo
@@ -69,8 +69,8 @@ jobs:
               touch token.0
               echo ${{ env.BOT_TOKEN }} > token.0
               echo $?
-            host: # 123.45.678.890
-            user: root
+            host: 10.69.69.228
+            user: Pi
             key: ${{ secrets.SSH_PRIVATE_KEY }}
 
   create-systemctl-service:
@@ -98,8 +98,8 @@ jobs:
             sudo systemctl enable ${{ env.REPO_NAME }}.service
             sudo systemctl daemon-reload
             sudo systemctl start ${{ env.REPO_NAME }}.service
-          host: # 123.45.678.890
-          user: root
+          host: 10.69.69.228
+          user: Pi
           key: ${{ secrets.SSH_PRIVATE_KEY }}
 
   create-systemctl-restart:
@@ -121,6 +121,6 @@ jobs:
             sudo systemctl enable ${{ env.REPO_NAME }}-watcher.service
             sudo systemctl daemon-reload
             sudo systemctl start ${{ env.REPO_NAME }}-watcher.service
-          host: # 123.45.678.890
-          user: root
+          host: 10.69.69.228
+          user: Pi
           key: ${{ secrets.SSH_PRIVATE_KEY }}

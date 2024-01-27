@@ -14,8 +14,8 @@ jobs:
       - name: SFTP Deploy
         uses: wlixcc/SFTP-Deploy-Action@v1.2.1
         with:
-          username: root
-          server: # 123.45.678.890
+          username: Pi
+          server: 10.69.69.228
           port: 22
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
           local_path: ./*
@@ -30,6 +30,6 @@ jobs:
         uses: fifsky/ssh-action@master
         with:
           command: sudo systemctl start ${{ env.REPO_NAME }}-watcher.service
-          host: # 123.45.678.890
-          user: root
+          host: 10.69.69.228
+          user: Pi
           key: ${{ secrets.SSH_PRIVATE_KEY }}
