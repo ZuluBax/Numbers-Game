@@ -45,4 +45,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-${{ steps.setup_python.outputs.python-version }}-venv- 
 
+      - name: Start
+        run: |
+          poetry run bot.py
+          
+
     
