@@ -47,7 +47,7 @@ jobs:
 
       - name: Start
         run: |
-          python bot.py
+          poetry run bot.py
           
 
     
